@@ -1,0 +1,69 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+
+\title{Assignment 14: Papoulis Chapter 11 }
+\author{Dhatri Reddy}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+\usepackage{amsmath}
+\usepackage{romannum}
+\usepackage{enumitem}
+\setbeamertemplate{caption}[numbered]{}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+
+
+\begin{document}
+
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+\logo{}
+
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+\section{Question}
+\begin{frame}{Question}
+    \begin{block}{Problem 11.13}
+    Given a real process x\brak{t} with Fourier transform $X\brak{\omega} = A\brak{\omega} + jB\brak{\omega}$, show that if the processes $A\brak{\omega}$ and $B\brak{\omega}$ satisfy \brak{11-79} and $E\cbrak{A\brak{\omega}} = E\cbrak{B\brak{\omega}} = 0$, then $x\brak{t}$ is WSS.
+\end{block}
+\end{frame}
+
+\section{Solution}
+\begin{frame}
+\frametitle{Solution}
+$E\cbrak{A\brak{u}A\brak{v}} = Q\brak{u}\delta\brak{u-v} = E\cbrak{B\brak{u}B\brak{v}}$\\
+$E\cbrak{A\brak{u}B\brak{v}}=0$\\
+for $u\geq0$, $u\geq0$. We have to show that if the above is true and $E\cbrak{A\brak{\omega}} = E\cbrak{B\brak{\omega}} = 0$ then the process
+
+$x\brak{t} = \frac{1}{\pi}\int_{0}^\infty\brak{A\brak{\omega}\cos{\omega t} - B\brak{\omega}\sin{\omega t}}d\omega$ is WSS.
+
+\end{frame}
+
+\section{Proof}
+\begin{frame}
+\frametitle{Solution}
+
+$E\cbrak{x\brak{t}} = 0$ and 
+
+\begin{align}
+     &= \frac{1}{\pi^{2}}\int_{0}^\infty \int_{0}^\infty E\cbrak{A\brak{u}\cos{u\brak{t + \tau}} - B\brak{u}\sin{u\brak{t + \tau}}}\brak{A\brak{v}\cos{vt} - B\brak{v}\sin{vt}}du dv\\
+    &= \frac{1}{\pi}\int_{0}^\infty \int_{0}^\infty Q\brak{u}\delta\brak{u-v}\brak{\cos{u\brak{t + \tau}} + \sin{u\brak{t + \tau}}\sin{v\brak{t}}}du dv\\
+    &= \frac{1}{\pi^{2}}\int_{0}^\infty Q\brak{u}\cbrak{\cos{u\brak{t + \tau}}\cos{ut} + \sin{u\brak{t + \tau}}\sin{ut}}du\\
+    &= \frac{1}{\pi^{2}}\int_{0}^\infty Q\brak{u}\cos{u\tau}du
+\end{align}
+
+\end{frame}
+
+\section{Conclusion}
+\begin{frame}
+\frametitle{Solution}
+Hence,\\
+From this it follows that x\brak{t} is WSS with $S_{xx} = \frac{Q\brak{\omega}}{\pi}$
+\end{frame}
+\end{document}
